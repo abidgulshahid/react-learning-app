@@ -1,7 +1,11 @@
 import { MouseEvent, useState } from "react"
 
-function ListGroups(){
-    const Lists  = ['Abid', 'Gul', 'Shahid', 'Marwat']
+interface Props {
+    Lists: string[],
+    heading: string
+}
+
+function ListGroups( {Lists, heading}: Props){
     const items = []
     const getItems = () => {
         return items.length === 0 && <p>No item found</p>
