@@ -1,16 +1,18 @@
+import { MouseEvent, useState } from "react"
 
 function ListGroups(){
     const Lists  = ['Abid', 'Gul', 'Shahid', 'Marwat']
-    var items = []
+    const items = []
     const getItems = () => {
         return items.length === 0 && <p>No item found</p>
     }
-    let count = 0
-    const counter = () => {
-        count = count + 1
-        return count
 
+    const [count, setCounter] = useState(0)
+
+    const handleClick = () => {
+        setCounter(count + 1 )
     }
+
   
     return (
         <>
@@ -19,6 +21,7 @@ function ListGroups(){
 <ul className="list-group">
 
     {Lists.map((items) => (<li onClick={() => console.log(items)} className="list-group-item" key={items}>{items}</li>))}
+    <button className="btn btn-success" onClick={() => {handleClick()}}>Click Me! {count}</button>
 </ul>
 </>
 
