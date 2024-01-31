@@ -7,17 +7,21 @@ function ListGroups(){
         return items.length === 0 && <p>No item found</p>
     }
 
+
+    // React States
     const [count, setCounter] = useState(0)
 
     const handleClick = () => {
         setCounter(count + 1 )
     }
 
+    const [SelectedIndex, setSelectedIndex] = useState(-1)
+
   
     return (
         <>
         {getItems()}
-    <h1>List</h1>
+    <h1>List</h1> 
 <ul className="list-group">
 
     {Lists.map((items) => (<li onClick={() => console.log(items)} className="list-group-item" key={items}>{items}</li>))}
